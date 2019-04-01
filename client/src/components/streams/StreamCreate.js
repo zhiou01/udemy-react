@@ -1,8 +1,8 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStream } from '../../actions';
+import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 // const StreamCreate = () => {
 //  return <div> StreamCreate</div>
@@ -64,16 +64,16 @@ const validate = (formValues) => {
 	return errors;
 };
 
-// const fromWrapped = reduxForm({
-// 	form: 'streamCreate',
-// 	validate
-// })(StreamCreate);
+const fromWrapped = reduxForm({
+	form: 'streamCreate',
+	validate
+})(StreamCreate);
 
-// export default connect(null, { createStream })(fromWrapped);
+export default connect(null, { createStream })(fromWrapped);
 
-export default connect(null, { createStream })(
-	reduxForm({
-		form: 'streamCreate',
-		validate
-	})(StreamCreate)
-);
+// export default connect(null, { createStream })(
+// 	reduxForm({
+// 		form: 'streamCreate',
+// 		validate
+// 	})(StreamCreate)
+// );
